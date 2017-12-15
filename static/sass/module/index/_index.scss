@@ -1,0 +1,130 @@
+.m-bd {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(229, 222, 206, 0.6);
+  padding: 30px;
+}
+
+.g-sd {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.g-sdc {
+  width: 375px;
+  border: 1px solid #b59d74;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  background: rgba(242, 237, 226, 0.6);
+  flex: none;
+  .m-intro {
+    color: #b69e74;
+    font-size: 16px;
+    padding: 0 40px;
+    position: relative;
+    li {
+      margin: 30px 0;
+      font-weight: bold;
+    }
+    .m-logo {
+      margin-left: 50px;
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      opacity: 0.4;
+    }
+  }
+  .m-title {
+    padding: 7px;
+    background: #b7a077;
+    .iconfont {
+      font-size: 22px;
+      color: #0a8ddf;
+      vertical-align: middle;
+    }
+    span {
+      margin-left: 10px;
+      color: #fff;
+      font-size: 16px;
+      vertical-align: middle;
+    }
+    a {
+      color: #fff;
+      font-size: 14px;
+      float: right;
+      line-height: 28px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .m-list {
+    padding: 20px;
+    li {
+      list-style-type: disc;
+      margin-left: 25px;
+      margin-bottom: 10px;
+      a {
+        color: #000;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.g-mn {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.m-banner {
+  flex: none;
+  margin-bottom: 40px;
+}
+
+.m-art {
+  flex: none;
+}
+
+.m-art-list {
+  display: flex;
+  flex-direction: column;
+  color: #a2834e;
+}
+
+.m-art-item {
+  flex: none;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.m-art-info {
+  flex: 0 0 160px;
+  dt {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  dd {
+    font-size: 14px;
+  }
+}
+
+.m-art-detail {
+  background: #d6c9b2;
+  border-radius: 5px;
+  padding: 24px;
+  flex: 0 1 515px;
+  dt {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #694b17;
+  }
+  dd {
+    font-size: 14px;
+    line-height: 24px;
+    color: #694b17;
+  }
+}

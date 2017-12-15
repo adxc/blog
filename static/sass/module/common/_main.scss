@@ -1,0 +1,67 @@
+body {
+  background: url("./assets/bg.png");
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%
+}
+
+.g-hd {
+  width: 1200px;
+  margin: 0 auto;
+  .m-logo{
+    width: 282px;
+    height: 84px;
+    background: url("./assets/logoChen.png");
+    margin-top: 10px;
+  }
+  .m-list{
+    margin-top: 40px;
+    li{
+      font-size: 18px;
+      input{
+        float: left;
+        height: 30px;
+        margin-right: 20px;
+        border-radius: 30px;
+        border: 1px solid #dddddd;
+        padding: 0 10px;
+      }
+      margin-left: 30px;
+      float: left;
+      a{
+        color: #fff;
+      }
+      line-height: 30px;
+      .m-search{
+        margin-top: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.g-bd {
+  flex: 1;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.g-ft {
+  height: 77px;
+  background: #a1824c;
+  flex: 0 0 auto;
+  text-align: center;
+  line-height: 77px;
+  color: #fff;
+  width: 100%;
+}
