@@ -18,7 +18,7 @@
              <router-link to="/python">python</router-link>
             </li>
             <li>
-              <router-link to="/article">随笔</router-link>
+              <router-link to="/essay">随笔</router-link>
             </li>
           </ul>
       </div>
@@ -39,5 +39,4 @@
 
 <style lang="scss">
   @import "./../static/sass/blogui.scss";
-
 </style>

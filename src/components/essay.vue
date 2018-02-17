@@ -21,13 +21,13 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> 
 </template>
 <script>
 import utils from '../utils'
-  export default {
-    name: 'Python',
-    data:function(){
+export default {
+  name: 'essay',
+  data:function(){
       return {
         articlesList:[]
       }
@@ -38,7 +38,7 @@ import utils from '../utils'
     methods:{
       getArticlesList:function(){
         let jsonParams = {
-          url:"/api/front/api/articleType/python",
+          url:"/api/front/api/articleType/essay",
           params:{}
         }
         utils.sendAjax(jsonParams,(data)=>{
@@ -47,12 +47,11 @@ import utils from '../utils'
         })
       }
     }
-  }
-
+}
 </script>
 <style lang="scss" scoped>
   .m-article {
-        width: 100%;
+       width: 100%;
     .m-art-list {
          padding-left: 20px;
          li{

@@ -102,13 +102,9 @@
 
 .m-art-info {
   flex: 0 0 160px;
-  dt {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  dd {
-    font-size: 14px;
-  }
+  font-size: 16px;
+  display: flex;
+  align-items: center;
 }
 
 .m-art-detail {
@@ -126,5 +122,17 @@
     font-size: 14px;
     line-height: 24px;
     color: #694b17;
+  }
+  .note{
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+    &::after{
+    content:"...";
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    }
   }
 }
