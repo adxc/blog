@@ -123,16 +123,16 @@
     line-height: 24px;
     color: #694b17;
   }
-  .note{
-    position: relative;
-    height: 120px;
-    overflow: hidden;
-    &::after{
-    content:"...";
-    font-weight:bold;
-    position:absolute;
-    bottom:0;
-    right:0;
-    }
+  .note {
+    // position: relative;
+    // height: 100px;
+    // overflow: hidden;
+    // &::after{
+    // content:"...";
+    // font-weight:bold;
+    // position:absolute;
+    // bottom:0;
+    // left:0;
+    // }
   }
 }

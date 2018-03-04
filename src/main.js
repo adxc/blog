@@ -5,7 +5,15 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
-
+Vue.filter('timeFormatter',value =>{
+  return value.replace(/GMT/g,"")
+})
+Vue.prototype.artFormatter = function(value){
+    if(value.length > 100){
+      return value.slice(0,100)  + "..."
+    }
+    return value
+}
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

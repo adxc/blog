@@ -8,7 +8,7 @@
         <ul class="m-art-list">
           <li class="m-art-item" v-for="article in articles" :key = "article.id">  
             <div class="m-art-info">
-             {{article.time}}
+             {{article.time | timeFormatter}}
             </div>
             <div class="m-art-detail">
                 <router-link :to="{name:'article',params:{id:article.id}}">
@@ -18,7 +18,7 @@
                     <label for="">分类:</label> {{article.type}}
                     <label for="">标签:</label> {{article.tag}}
                   </dd>
-                  <dd v-html="article.content" class="note">{{article.content}}</dd>
+                  <dd v-html="artFormatter(article.content)" class="note"></dd>
                 </dl>
               </router-link>
             </div>
@@ -27,52 +27,16 @@
       </div>
     </div>
     <div class="g-sd">
-      <div class="g-sdc">
-        <div class="m-title ">
-          <i class="icon-ziliao1 iconfont"></i>
-          <span>我的名片</span>
-        </div>
-        <div class="m-intro">
-          <ul>
-            <li>网名：handsomeboy | 美男子</li>
-            <li>职业：Web前端工程师、Python程序员</li>
-            <li>QQ：181551588</li>
-            <li>Email：andyxic@163.com</li>
-          </ul>
-          <img src="../assets/monkey.png" alt="" class="m-logo">
-        </div>
-      </div>
-      <div class="g-sdc">
-        <div class="m-title">
-          <i class="iconfont icon-information"></i>
-          <span>推荐博文</span>
-        </div>
-        <div class="m-list">
-          <ul>
-            <li v-for="item in recommend" :key = "item.id">
-              <router-link :to="{name:'article',params:{id:item.id}}">{{item.title}}</router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="g-sdc">
-        <div class="m-title">
-          <i class="iconfont icon-python1"></i>
-          <span>Python</span>
-           <router-link to="/python">更多</router-link>
-        </div>
-        <div class="m-list">
-          <ul>
-            <li v-for=" item in recommendPython" :key = "item.id">
-              <router-link :to="{name:'article',params:{id:item.id}}">{{item.title}}</router-link>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <show-me :show-name="'我的名片'" :show-type="infoLogo" :is-article="!isArticle" :articles="recommend"></show-me>
+     <show-me :show-name="'推荐博文'" :show-type="artLogo" :is-article="isArticle" :articles="recommend"></show-me>
+      <show-me :show-name="'Python'" :show-type="pythonLogo" :is-article="isArticle" :articles="recommendPython">
+         <router-link to="/python">更多</router-link>
+      </show-me>
     </div>
   </div>
 </template>
 <script>
+import showInfo from "./show"
 import utils from '../utils'
   export default {
     name: "Home",
@@ -81,14 +45,26 @@ import utils from '../utils'
         articles:[],
         recommend:[],
         recommendPython:[],
+        infoLogo:"icon-ziliao1",
+        pythonLogo:"icon-python1",
+        artLogo: "icon-information",
+        isArticle:true,
       }
     },
-    created:function(){
-      this.getArticlesList()
-      this.getRecommend()
-      this.getRecommendPython()
+    components:{
+    'show-me': showInfo,
+    },
+    mounted(){
+        this.getArticlesList()
+        this.getRecommend()
+        this.getRecommendPython()
+    },
+    computed:{
     },
     methods:{
+      showMe(){
+        this.show = !this.sho
+      },
       getArticlesList:function(){
         let jsonParams = {
           url:"/api/front/api/all",
